@@ -6,9 +6,11 @@
     <title>Yuxiang Wu — Research & Teaching</title>
     <meta name="color-scheme" content="dark" />
     <style>
-      /* =========================
-         Design tokens (dark only)
-      ========================== */
+      /* ==========================================================================
+         1) DESIGN TOKENS (dark theme)
+         --------------------------------------------------------------------------
+         Centralized variables for spacing, colors, typography, and shadows.
+      ========================================================================== */
       :root {
         --maxw: 1120px;
         --gap: 18px;
@@ -21,7 +23,7 @@
         --sub: #a6b0c3;
         --line: #1a2230;
 
-        --accent: #58e1ff; /* icy-cyan */
+        --accent: #58e1ff;  /* icy cyan */
         --accent-2: #8b5cf6; /* violet */
 
         --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
@@ -34,13 +36,18 @@
         --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
       }
 
-      /* Make in-page anchors scroll nicely and not hide under sticky header */
+      /* ==========================================================================
+         2) ANCHOR SCROLL BEHAVIOR
+         --------------------------------------------------------------------------
+         Smooth scrolling and offset so content isn't hidden by the sticky header.
+         (Header height ≈ 60–80px; 96px provides a safe margin.)
+      ========================================================================== */
       html { scroll-behavior: smooth; }
-      [id] { scroll-margin-top: 96px; } /* header ~60–80px; give cushion */
+      [id] { scroll-margin-top: 96px; } /* account for sticky header */
 
-      /* =========================
-         Base
-      ========================== */
+      /* ==========================================================================
+         3) BASE ELEMENTS
+      ========================================================================== */
       * { box-sizing: border-box; }
       html, body { height: 100%; }
       body {
@@ -56,7 +63,12 @@
       :focus-visible { outline: 2px dashed var(--accent); outline-offset: 3px; }
       .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
 
-      /* Skip link for a11y */
+      /* ==========================================================================
+         4) ACCESSIBILITY: SKIP LINK
+         --------------------------------------------------------------------------
+         Hidden link becomes visible when focused, allowing keyboard users to
+         jump directly to main content.
+      ========================================================================== */
       .skip {
         position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden;
       }
@@ -65,9 +77,11 @@
         background: var(--panel); border: 1px solid var(--line); border-radius: 8px; z-index: 100;
       }
 
-      /* =========================
-         Header / nav
-      ========================== */
+      /* ==========================================================================
+         5) HEADER & NAVIGATION
+         --------------------------------------------------------------------------
+         Sticky header with a blurred backdrop; keyboard-visible focus on links.
+      ========================================================================== */
       header {
         position: sticky; top: 0; z-index: 20;
         backdrop-filter: saturate(1.1) blur(8px);
@@ -81,9 +95,9 @@
       nav a { padding: 8px 10px; border-radius: 10px; }
       nav a:focus-visible { outline: 2px dashed var(--accent); outline-offset: 2px; }
 
-      /* =========================
-         Hero
-      ========================== */
+      /* ==========================================================================
+         6) HERO
+      ========================================================================== */
       .hero {
         display: grid;
         grid-template-columns: minmax(140px, 200px) 1fr;
@@ -108,7 +122,7 @@
       }
       .tagline { color: var(--sub); margin-bottom: 14px; }
 
-      /* badges + CTA */
+      /* Badges / Pills / CTA button */
       .badges { display: flex; gap: 10px; flex-wrap: wrap; }
       .pill {
         font-family: var(--mono); font-size: 13px;
@@ -135,9 +149,11 @@
       }
       .cta svg { width: 16px; height: 16px; opacity: .95; }
 
-      /* =========================
-         Banners / grid
-      ========================== */
+      /* ==========================================================================
+         7) BANNERS / GRID CARDS
+         --------------------------------------------------------------------------
+         Reusable card styles and the 3-column research grid.
+      ========================================================================== */
       .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--gap); padding: 26px 0; }
       .card {
         position: relative; padding: var(--pad); border-radius: var(--radius);
@@ -149,10 +165,12 @@
       .card strong { font-size: 18px; letter-spacing: .2px; color: var(--accent); }
       .card .sub { color: var(--sub); }
       .wide { grid-column: 1 / -1; min-height: 120px; display: grid; align-items: center; }
-      /* Extra breathing room between Teaching and Service */
+
+      /* Vertical spacing for specific sections */
       #service { margin-top: calc(var(--gap) * 1.5); }
-      /* Give Openings banner some space too */
       #openings { margin-top: calc(var(--gap) * 1.5); }
+
+      /* Subtle color tints over cards */
       .tint {
         position: absolute; inset: 0; border-radius: inherit; pointer-events: none;
         background:
@@ -160,13 +178,13 @@
           radial-gradient(500px 180px at 90% 0%, rgba(139,92,246,.10), transparent 40%);
       }
 
-      /* Disabled cards (non-clickable placeholders) */
+      /* Disabled placeholder cards (non-interactive) */
       .card.is-disabled { cursor: default; pointer-events: none; }
       .card.is-disabled:hover { transform: none; }
 
-      /* =========================
-         Openings accordion
-      ========================== */
+      /* ==========================================================================
+         8) OPENINGS: ACCORDION STYLES
+      ========================================================================== */
       .openings details { 
         border: 1px solid var(--line); 
         border-radius: 12px; 
@@ -191,24 +209,24 @@
       .openings em { color: var(--ink); font-style: normal; }
       .openings .contact { margin-top: 12px; font-family: var(--mono); }
 
-      /* =========================
-         Content sections
-      ========================== */
+      /* ==========================================================================
+         9) CONTENT SECTIONS & TYPOGRAPHY
+      ========================================================================== */
       section.section { padding: 8px 0 16px; border-top: 1px solid var(--line); }
       h2 { font-size: 24px; margin: 18px 0 8px; }
       ul { margin: 0; padding-left: 18px; }
       .mono { font-family: var(--mono); }
       .k { font-family: var(--mono); color: var(--sub); user-select: all; }
 
-      /* =========================
-         Footer
-      ========================== */
+      /* ==========================================================================
+         10) FOOTER
+      ========================================================================== */
       footer { margin-top: 32px; border-top: 1px solid var(--line); }
       .foot { padding: 16px 0 26px; color: var(--sub); font-size: 14px; }
 
-      /* =========================
-         Responsive & motion
-      ========================== */
+      /* ==========================================================================
+         11) RESPONSIVE & REDUCED MOTION
+      ========================================================================== */
       @media (max-width: 980px) {
         .hero { grid-template-columns: 1fr; }
         .grid { grid-template-columns: 1fr; }
@@ -233,7 +251,7 @@
           <a href="#openings">Openings</a>
           <a href="#contact">Contact</a>
         </nav>
-        <!-- theme toggle removed -->
+        <!-- Header theme toggle intentionally omitted -->
       </div>
     </header>
 
@@ -258,7 +276,7 @@
         </div>
       </section>
 
-      <!-- 3 research banners -->
+      <!-- RESEARCH GRID (3 cards) -->
       <section class="grid" id="research" aria-label="Research areas">
         <!-- Active external link -->
         <a class="card" href="https://machine-intelligence-characterisation.github.io/home/" target="_blank" rel="noopener">
@@ -270,7 +288,7 @@
           <div class="mono sub">/machine-intelligence →</div>
         </a>
 
-        <!-- Disabled placeholders (now non-clickable, no href="#" jump) -->
+        <!-- Placeholder (non-clickable) -->
         <div class="card is-disabled" role="group" aria-label="Green Metal (coming soon)">
           <div class="tint"></div>
           <strong>Green Metal</strong>
@@ -278,6 +296,7 @@
           <div class="mono sub">/green-metal →</div>
         </div>
 
+        <!-- Placeholder (non-clickable) -->
         <div class="card is-disabled" role="group" aria-label="Ocean Carbonation (coming soon)">
           <div class="tint"></div>
           <strong>Ocean Carbonation</strong>
@@ -286,7 +305,7 @@
         </div>
       </section>
 
-      <!-- Teaching banner -->
+      <!-- TEACHING BANNER -->
       <div class="card wide" id="teaching" aria-label="Teaching">
         <div class="tint"></div>
         <div>
@@ -306,8 +325,10 @@
         </div>
       </div>
 
-      <!-- Service banner (kept clickable) -->
-      <a class="card wide" id="service"
+      <!-- SERVICE (ANCHOR SHIM) -->
+      <div id="service"></div>
+      <!-- SERVICE BANNER (clickable; id is on the shim above to avoid focus ring) -->
+      <a class="card wide"
          href="https://www.monash.edu/researchinfrastructure/x-ray/home"
          target="_blank" rel="noopener" aria-label="Service – Monash X-Ray Platform">
         <div class="tint"></div>
@@ -321,7 +342,7 @@
         <div class="mono sub">monash.edu/x-ray →</div>
       </a>
 
-      <!-- Openings banner -->
+      <!-- OPENINGS BANNER -->
       <div class="card wide" id="openings" aria-label="Openings">
         <div class="tint"></div>
         <div>
@@ -431,7 +452,7 @@
         </div>
       </div>
 
-      <!-- Contact -->
+      <!-- CONTACT -->
       <section class="section" id="contact" aria-label="Contact">
         <h2>Contact</h2>
         <p>
@@ -449,7 +470,7 @@
       <div class="wrap foot">© <span id="y"></span> Yuxiang Wu</div>
     </footer>
 
-    <!-- Year only -->
+    <!-- YEAR (auto-updates to current year) -->
     <script>
       document.getElementById('y').textContent = new Date().getFullYear();
     </script>
