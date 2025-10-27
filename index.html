@@ -23,16 +23,22 @@
         --sub: #a6b0c3;
         --line: #1a2230;
 
-        --accent: #58e1ff;  /* icy cyan */
+        --accent: #58e1ff; /* icy cyan */
         --accent-2: #8b5cf6; /* violet */
 
         --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
 
-        --font: 15px/1.6 ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
-        --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+        --font: 15px/1.6 ui-sans-serif, system-ui, -apple-system, Segoe UI,
+          Roboto, "Helvetica Neue", Arial;
+        --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono",
+          monospace;
       }
       [data-theme="dark"] {
-        --bg: #0b0e13; --panel: #0f131a; --ink: #e8eef7; --sub: #a6b0c3; --line: #1a2230;
+        --bg: #0b0e13;
+        --panel: #0f131a;
+        --ink: #e8eef7;
+        --sub: #a6b0c3;
+        --line: #1a2230;
         --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
       }
 
@@ -42,26 +48,55 @@
          Smooth scrolling and offset so content isn't hidden by the sticky header.
          (Header height ≈ 60–80px; 96px provides a safe margin.)
       ========================================================================== */
-      html { scroll-behavior: smooth; }
-      [id] { scroll-margin-top: 96px; } /* account for sticky header */
+      html {
+        scroll-behavior: smooth;
+      }
+      [id] {
+        scroll-margin-top: 96px;
+      } /* account for sticky header */
 
       /* ==========================================================================
          3) BASE ELEMENTS
       ========================================================================== */
-      * { box-sizing: border-box; }
-      html, body { height: 100%; }
+      * {
+        box-sizing: border-box;
+      }
+      html,
       body {
-        margin: 0; font: var(--font);
-        background:
-          radial-gradient(1200px 700px at 10% -10%, rgba(88,225,255,.08), transparent 60%),
-          radial-gradient(900px 600px at 90% 0%, rgba(139,92,246,.10), transparent 60%),
+        height: 100%;
+      }
+      body {
+        margin: 0;
+        font: var(--font);
+        background: radial-gradient(
+            1200px 700px at 10% -10%,
+            rgba(88, 225, 255, 0.08),
+            transparent 60%
+          ),
+          radial-gradient(
+            900px 600px at 90% 0%,
+            rgba(139, 92, 246, 0.1),
+            transparent 60%
+          ),
           var(--bg);
         color: var(--ink);
       }
-      a { color: var(--accent); text-decoration: none; }
-      a:hover { text-decoration: underline; }
-      :focus-visible { outline: 2px dashed var(--accent); outline-offset: 3px; }
-      .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+      a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      :focus-visible {
+        outline: 2px dashed var(--accent);
+        outline-offset: 3px;
+      }
+      .wrap {
+        max-width: var(--maxw);
+        margin: 0 auto;
+        padding: 0 24px;
+      }
 
       /* ==========================================================================
          4) ACCESSIBILITY: SKIP LINK
@@ -70,11 +105,24 @@
          jump directly to main content.
       ========================================================================== */
       .skip {
-        position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden;
+        position: absolute;
+        left: -9999px;
+        top: auto;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
       }
       .skip:focus {
-        position: fixed; left: 16px; top: 12px; width: auto; height: auto; padding: 8px 12px;
-        background: var(--panel); border: 1px solid var(--line); border-radius: 8px; z-index: 100;
+        position: fixed;
+        left: 16px;
+        top: 12px;
+        width: auto;
+        height: auto;
+        padding: 8px 12px;
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        z-index: 100;
       }
 
       /* ==========================================================================
@@ -83,17 +131,40 @@
          Sticky header with a blurred backdrop; keyboard-visible focus on links.
       ========================================================================== */
       header {
-        position: sticky; top: 0; z-index: 20;
+        position: sticky;
+        top: 0;
+        z-index: 20;
         backdrop-filter: saturate(1.1) blur(8px);
         background: color-mix(in oklab, var(--bg) 86%, transparent);
         border-bottom: 1px solid var(--line);
       }
-      .bar { display: grid; grid-template-columns: 1fr auto auto; gap: 16px; align-items: center; padding: 12px 0; }
-      .brand { font-family: var(--mono); font-weight: 600; letter-spacing: .3px; }
-      .brand .dot { color: var(--accent); }
-      nav { display: flex; gap: 18px; }
-      nav a { padding: 8px 10px; border-radius: 10px; }
-      nav a:focus-visible { outline: 2px dashed var(--accent); outline-offset: 2px; }
+      .bar {
+        display: grid;
+        grid-template-columns: 1fr auto auto;
+        gap: 16px;
+        align-items: center;
+        padding: 12px 0;
+      }
+      .brand {
+        font-family: var(--mono);
+        font-weight: 600;
+        letter-spacing: 0.3px;
+      }
+      .brand .dot {
+        color: var(--accent);
+      }
+      nav {
+        display: flex;
+        gap: 18px;
+      }
+      nav a {
+        padding: 8px 10px;
+        border-radius: 10px;
+      }
+      nav a:focus-visible {
+        outline: 2px dashed var(--accent);
+        outline-offset: 2px;
+      }
 
       /* ==========================================================================
          6) HERO
@@ -109,132 +180,284 @@
         width: 100%;
         aspect-ratio: 1 / 1;
         border-radius: 16px;
-        background: linear-gradient(180deg, color-mix(in oklab, var(--panel) 90%, transparent), var(--panel));
+        background: linear-gradient(
+          180deg,
+          color-mix(in oklab, var(--panel) 90%, transparent),
+          var(--panel)
+        );
         border: 1px solid var(--line);
         overflow: hidden;
-        display: grid; place-items: center;
+        display: grid;
+        place-items: center;
         box-shadow: var(--shadow);
         transform: translateX(-20px);
       }
-      .portrait img { width: 100%; height: 100%; object-fit: cover; display: block; }
-      h1 {
-        font-size: 32px; line-height: 1.1; margin: 0 0 10px; letter-spacing: -0.3px;
+      .portrait img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
       }
-      .tagline { color: var(--sub); margin-bottom: 14px; }
+      h1 {
+        font-size: 32px;
+        line-height: 1.1;
+        margin: 0 0 10px;
+        letter-spacing: -0.3px;
+      }
+      .tagline {
+        color: var(--sub);
+        margin-bottom: 14px;
+      }
 
       /* Badges / Pills / CTA button */
-      .badges { display: flex; gap: 10px; flex-wrap: wrap; }
+      .badges {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
       .pill {
-        font-family: var(--mono); font-size: 13px;
+        font-family: var(--mono);
+        font-size: 13px;
         border: 1px solid color-mix(in oklab, var(--accent) 40%, var(--line));
-        color: var(--accent); padding: 6px 10px; border-radius: 999px;
+        color: var(--accent);
+        padding: 6px 10px;
+        border-radius: 999px;
         background: color-mix(in oklab, var(--accent) 12%, var(--panel));
-        display: inline-flex; align-items: center; gap: 8px;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
       }
       .cta {
-        display: inline-flex; align-items: center; gap: 10px;
-        margin-top: 14px; padding: 10px 14px; border-radius: 12px;
-        background: linear-gradient(180deg, color-mix(in oklab, var(--accent) 40%, var(--panel)), var(--panel));
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: 14px;
+        padding: 10px 14px;
+        border-radius: 12px;
+        background: linear-gradient(
+          180deg,
+          color-mix(in oklab, var(--accent) 40%, var(--panel)),
+          var(--panel)
+        );
         border: 1px solid color-mix(in oklab, var(--accent) 60%, var(--line));
         color: var(--ink);
-        box-shadow: 0 10px 24px color-mix(in oklab, var(--accent) 22%, transparent), inset 0 1px 0 color-mix(in oklab, white 40%, transparent);
+        box-shadow: 0 10px 24px
+            color-mix(in oklab, var(--accent) 22%, transparent),
+          inset 0 1px 0 color-mix(in oklab, white 40%, transparent);
         text-decoration: none;
-        transition: transform .15s ease, box-shadow .15s ease, background .15s ease, border-color .15s ease;
+        transition: transform 0.15s ease, box-shadow 0.15s ease,
+          background 0.15s ease, border-color 0.15s ease;
       }
       .cta:hover {
         transform: translateY(-2px);
-        background: linear-gradient(180deg, color-mix(in oklab, var(--accent) 60%, var(--panel)), var(--panel));
+        background: linear-gradient(
+          180deg,
+          color-mix(in oklab, var(--accent) 60%, var(--panel)),
+          var(--panel)
+        );
         border-color: color-mix(in oklab, var(--accent) 70%, var(--line));
-        box-shadow: 0 12px 28px color-mix(in oklab, var(--accent) 28%, transparent), inset 0 1px 0 color-mix(in oklab, white 50%, transparent);
+        box-shadow: 0 12px 28px
+            color-mix(in oklab, var(--accent) 28%, transparent),
+          inset 0 1px 0 color-mix(in oklab, white 50%, transparent);
       }
-      .cta svg { width: 16px; height: 16px; opacity: .95; }
+      .cta svg {
+        width: 16px;
+        height: 16px;
+        opacity: 0.95;
+      }
 
       /* ==========================================================================
          7) BANNERS / GRID CARDS
          --------------------------------------------------------------------------
          Reusable card styles and the 3-column research grid.
       ========================================================================== */
-      .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--gap); padding: 26px 0; }
-      .card {
-        position: relative; padding: var(--pad); border-radius: var(--radius);
-        background: linear-gradient(180deg, color-mix(in oklab, var(--panel) 98%, transparent), var(--panel));
-        border: 1px solid var(--line); min-height: 160px;
-        display: grid; align-content: space-between; gap: 10px; transition: transform .15s ease;
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--gap);
+        padding: 26px 0;
       }
-      .card:hover { transform: translateY(-2px); }
-      .card strong { font-size: 18px; letter-spacing: .2px; color: var(--accent); }
-      .card .sub { color: var(--sub); }
-      .wide { grid-column: 1 / -1; min-height: 120px; display: grid; align-items: center; }
+      .card {
+        position: relative;
+        padding: var(--pad);
+        border-radius: var(--radius);
+        background: linear-gradient(
+          180deg,
+          color-mix(in oklab, var(--panel) 98%, transparent),
+          var(--panel)
+        );
+        border: 1px solid var(--line);
+        min-height: 160px;
+        display: grid;
+        align-content: space-between;
+        gap: 10px;
+        transition: transform 0.15s ease;
+      }
+      .card:hover {
+        transform: translateY(-2px);
+      }
+      .card strong {
+        font-size: 18px;
+        letter-spacing: 0.2px;
+        color: var(--accent);
+      }
+      .card .sub {
+        color: var(--sub);
+      }
+      .wide {
+        grid-column: 1 / -1;
+        min-height: 120px;
+        display: grid;
+        align-items: center;
+      }
 
       /* Vertical spacing for specific sections */
-      #service { margin-top: calc(var(--gap) * 1.5); }
-      #openings { margin-top: calc(var(--gap) * 1.5); }
+      #service {
+        margin-top: calc(var(--gap) * 1.5);
+      }
+      #openings {
+        margin-top: calc(var(--gap) * 1.5);
+      }
 
       /* Subtle color tints over cards */
       .tint {
-        position: absolute; inset: 0; border-radius: inherit; pointer-events: none;
-        background:
-          radial-gradient(400px 180px at 10% 0%, rgba(88,225,255,.10), transparent 40%),
-          radial-gradient(500px 180px at 90% 0%, rgba(139,92,246,.10), transparent 40%);
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        pointer-events: none;
+        background: radial-gradient(
+            400px 180px at 10% 0%,
+            rgba(88, 225, 255, 0.1),
+            transparent 40%
+          ),
+          radial-gradient(
+            500px 180px at 90% 0%,
+            rgba(139, 92, 246, 0.1),
+            transparent 40%
+          );
       }
 
       /* Disabled placeholder cards (non-interactive) */
-      .card.is-disabled { cursor: default; pointer-events: none; }
-      .card.is-disabled:hover { transform: none; }
+      .card.is-disabled {
+        cursor: default;
+        pointer-events: none;
+      }
+      .card.is-disabled:hover {
+        transform: none;
+      }
 
       /* ==========================================================================
          8) OPENINGS: ACCORDION STYLES
       ========================================================================== */
-      .openings details { 
-        border: 1px solid var(--line); 
-        border-radius: 12px; 
+      .openings details {
+        border: 1px solid var(--line);
+        border-radius: 12px;
         background: color-mix(in oklab, var(--panel) 96%, transparent);
-        margin: 10px 0; 
+        margin: 10px 0;
         box-shadow: var(--shadow);
       }
       .openings summary {
-        cursor: pointer; list-style: none; padding: 12px 14px; border-radius: 12px;
-        display: flex; align-items: center; justify-content: space-between;
-        font-weight: 600; color: var(--ink);
+        cursor: pointer;
+        list-style: none;
+        padding: 12px 14px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-weight: 600;
+        color: var(--ink);
       }
-      .openings summary::-webkit-details-marker { display: none; }
-      .openings summary .tag { 
-        font-family: var(--mono); font-size: 12px; 
-        color: var(--accent); border: 1px solid color-mix(in oklab, var(--accent) 40%, var(--line));
-        background: color-mix(in oklab, var(--accent) 12%, var(--panel)); 
-        padding: 2px 8px; border-radius: 999px; margin-left: 10px;
+      .openings summary::-webkit-details-marker {
+        display: none;
       }
-      .openings .panel { padding: 12px 16px 16px; color: var(--sub); }
-      .openings ul { margin: 8px 0 0; }
-      .openings em { color: var(--ink); font-style: normal; }
-      .openings .contact { margin-top: 12px; font-family: var(--mono); }
+      .openings summary .tag {
+        font-family: var(--mono);
+        font-size: 12px;
+        color: var(--accent);
+        border: 1px solid color-mix(in oklab, var(--accent) 40%, var(--line));
+        background: color-mix(in oklab, var(--accent) 12%, var(--panel));
+        padding: 2px 8px;
+        border-radius: 999px;
+        margin-left: 10px;
+      }
+      .openings .panel {
+        padding: 12px 16px 16px;
+        color: var(--sub);
+      }
+      .openings ul {
+        margin: 8px 0 0;
+      }
+      .openings em {
+        color: var(--ink);
+        font-style: normal;
+      }
+      .openings .contact {
+        margin-top: 12px;
+        font-family: var(--mono);
+      }
 
       /* ==========================================================================
          9) CONTENT SECTIONS & TYPOGRAPHY
       ========================================================================== */
-      section.section { padding: 8px 0 16px; border-top: 1px solid var(--line); }
-      h2 { font-size: 24px; margin: 18px 0 8px; }
-      ul { margin: 0; padding-left: 18px; }
-      .mono { font-family: var(--mono); }
-      .k { font-family: var(--mono); color: var(--sub); user-select: all; }
+      section.section {
+        padding: 8px 0 16px;
+        border-top: 1px solid var(--line);
+      }
+      h2 {
+        font-size: 24px;
+        margin: 18px 0 8px;
+      }
+      ul {
+        margin: 0;
+        padding-left: 18px;
+      }
+      .mono {
+        font-family: var(--mono);
+      }
+      .k {
+        font-family: var(--mono);
+        color: var(--sub);
+        user-select: all;
+      }
 
       /* ==========================================================================
          10) FOOTER
       ========================================================================== */
-      footer { margin-top: 32px; border-top: 1px solid var(--line); }
-      .foot { padding: 16px 0 26px; color: var(--sub); font-size: 14px; }
+      footer {
+        margin-top: 32px;
+        border-top: 1px solid var(--line);
+      }
+      .foot {
+        padding: 16px 0 26px;
+        color: var(--sub);
+        font-size: 14px;
+      }
 
       /* ==========================================================================
          11) RESPONSIVE & REDUCED MOTION
       ========================================================================== */
       @media (max-width: 980px) {
-        .hero { grid-template-columns: 1fr; }
-        .grid { grid-template-columns: 1fr; }
-        .portrait { transform: none; justify-self: start; max-width: 240px; }
-        #service, #openings { margin-top: var(--gap); }
+        .hero {
+          grid-template-columns: 1fr;
+        }
+        .grid {
+          grid-template-columns: 1fr;
+        }
+        .portrait {
+          transform: none;
+          justify-self: start;
+          max-width: 240px;
+        }
+        #service,
+        #openings {
+          margin-top: var(--gap);
+        }
       }
       @media (prefers-reduced-motion: reduce) {
-        .card:hover, .cta:hover { transform: none; }
+        .card:hover,
+        .cta:hover {
+          transform: none;
+        }
       }
     </style>
   </head>
@@ -264,13 +487,26 @@
           <h1>Yuxiang Wu</h1>
           <div class="tagline">Intelligence • Resources • Carbon</div>
           <p class="sub">
-          I am a lecturer (teaching and research) in the Department of Materials Science and Engineering at Monash University, Australia. My interest lies in the intersection of materials science, data science, and environmental science.  
-          I work with a small, agile group focused on understanding and intelligently utilising metal resources during the energy transition, while examining the environmental consequences of carbon emissions across Earth and ocean systems.  
-          Our work spans industry-driven projects that address immediate needs and fundamental research that may create a lasting impact.
-
+            I am a lecturer (teaching and research) in the Department of
+            Materials Science and Engineering at Monash University, Australia.
+            My interest lies in the intersection of materials science, data
+            science, and environmental science. I work with a small, agile group
+            focused on understanding and intelligently utilising metal resources
+            during the energy transition, while examining the environmental
+            consequences of carbon emissions across Earth and ocean systems. Our
+            work spans industry-driven projects that address immediate needs and
+            fundamental research that may create a lasting impact.
           </p>
           <a class="cta" href="#openings" aria-label="See open positions">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
               <path d="M7 17L17 7M7 7h10v10" />
             </svg>
             See openings
@@ -281,28 +517,47 @@
       <!-- RESEARCH GRID (3 cards) -->
       <section class="grid" id="research" aria-label="Research areas">
         <!-- Active external link -->
-        <a class="card" href="https://machine-intelligence-characterisation.github.io/home/" target="_blank" rel="noopener">
+        <a
+          class="card"
+          href="https://machine-intelligence-characterisation.github.io/home/"
+          target="_blank"
+          rel="noopener"
+        >
           <div class="tint"></div>
           <strong>Machine Intelligence for Characterisation</strong>
           <div class="sub">
-            Learning-driven analysis of in-situ electron microscopy and X-ray data; ML for materials design.
+            Learning-driven analysis of in-situ electron microscopy and X-ray
+            data; ML for materials design.
           </div>
           <div class="mono sub">/machine-intelligence →</div>
         </a>
 
         <!-- Placeholder (non-clickable) -->
-        <div class="card is-disabled" role="group" aria-label="Green Metal (coming soon)">
+        <div
+          class="card is-disabled"
+          role="group"
+          aria-label="Green Metal (coming soon)"
+        >
           <div class="tint"></div>
           <strong>Green Metal</strong>
-          <div class="sub">Green iron; steel recycling; green aluminium; advanced alloys.</div>
+          <div class="sub">
+            Green iron; steel recycling; green aluminium; advanced alloys.
+          </div>
           <div class="mono sub">/green-metal →</div>
         </div>
 
         <!-- Placeholder (non-clickable) -->
-        <div class="card is-disabled" role="group" aria-label="Ocean Carbonation (coming soon)">
+        <div
+          class="card is-disabled"
+          role="group"
+          aria-label="Ocean Carbonation (coming soon)"
+        >
           <div class="tint"></div>
           <strong>Ocean Carbonation</strong>
-          <div class="sub">Mineral–carbon interactions, kinetics of (de)carbonation, and monitoring for stable ocean carbon storage.</div>
+          <div class="sub">
+            Mineral–carbon interactions, kinetics of (de)carbonation, and
+            monitoring for stable ocean carbon storage.
+          </div>
           <div class="mono sub">/ocean-carbonation →</div>
         </div>
       </section>
@@ -316,11 +571,21 @@
             <ul>
               <li>
                 <span class="mono">/ENG5001</span> →
-                <a href="https://handbook.monash.edu/2025/units/ENG5001?year=2025" target="_blank" rel="noopener">Advanced data analytics for engineers</a>
+                <a
+                  href="https://handbook.monash.edu/2025/units/ENG5001?year=2025"
+                  target="_blank"
+                  rel="noopener"
+                  >Advanced data analytics for engineers</a
+                >
               </li>
               <li>
                 <span class="mono">/MTE4590</span> →
-                <a href="https://handbook.monash.edu/2025/units/MTE4590?year=2025" target="_blank" rel="noopener">Modelling of materials</a>
+                <a
+                  href="https://handbook.monash.edu/2025/units/MTE4590?year=2025"
+                  target="_blank"
+                  rel="noopener"
+                  >Modelling of materials</a
+                >
               </li>
             </ul>
           </div>
@@ -330,15 +595,19 @@
       <!-- SERVICE (ANCHOR SHIM) -->
       <div id="service"></div>
       <!-- SERVICE BANNER (clickable; id is on the shim above to avoid focus ring) -->
-      <a class="card wide"
-         href="https://www.monash.edu/researchinfrastructure/x-ray/home"
-         target="_blank" rel="noopener" aria-label="Service – Monash X-Ray Platform">
+      <a
+        class="card wide"
+        href="https://www.monash.edu/researchinfrastructure/x-ray/home"
+        target="_blank"
+        rel="noopener"
+        aria-label="Service – Monash X-Ray Platform"
+      >
         <div class="tint"></div>
         <div>
           <strong>Service @ Monash X-Ray Platform</strong>
           <div class="sub">
-            Central platform providing scientific support in X-ray diffraction, scattering,
-            computed tomography, and photoelectron spectroscopy.
+            Central platform providing scientific support in X-ray diffraction,
+            scattering, computed tomography, and photoelectron spectroscopy.
           </div>
         </div>
         <div class="mono sub">monash.edu/x-ray →</div>
@@ -359,16 +628,34 @@
                 </summary>
                 <div class="panel">
                   <details open>
-                    <summary><strong>Postdoc 1 - Phase transformation in green ironmaking and its infrastructure</strong></summary>
+                    <summary>
+                      <strong
+                        >Postdoc 1 - Phase transformation in green ironmaking
+                        and its infrastructure</strong
+                      >
+                    </summary>
                     <div class="panel">
                       <ul>
                         <li>Start: January 2026</li>
                         <li>Duration: 2 years</li>
                         <!-- <li>Focus: Phase transformations in green ironmaking</li> -->
-                        <li>Preferred background:
+                        <li>
+                          Preferred background:
                           <ul>
-                            <li>Strong experimental techniques: <em>X-ray/neutron diffraction, electron microscopy</em></li>
-                            <li>Strong fundamentals in <em>phase transformations (metals, oxidation, ceramics, etc.)</em></li>
+                            <li>
+                              Strong experimental techniques:
+                              <em
+                                >X-ray/neutron diffraction, electron
+                                microscopy</em
+                              >
+                            </li>
+                            <li>
+                              Strong fundamentals in
+                              <em
+                                >phase transformations (metals, oxidation,
+                                ceramics, etc.)</em
+                              >
+                            </li>
                           </ul>
                         </li>
                       </ul>
@@ -384,47 +671,150 @@
                   <span class="tag">Hiring: Jan 2026</span>
                 </summary>
                 <div class="panel">
+                  <!-- PhD 1 -->
                   <details open>
-                    <summary><strong>PhD 1 - Direct reduction of low-grade iron ore in green ironmaking</strong></summary>
+                    <summary>
+                      <strong>
+                        <a
+                          href="https://careers.pageuppeople.com/513/cw/en/job/685999/doctor-of-philosophy-phd-on-australian-green-ironmaking"
+                          target="_blank"
+                        >
+                          PhD 1 - Direct reduction of low-grade iron ore in
+                          green ironmaking
+                        </a>
+                      </strong>
+                    </summary>
                     <div class="panel">
+                      <p>
+                        We are seeking a PhD candidate interested in
+                        contributing to the development of Australian green
+                        ironmaking technologies, as it has direct relevance to
+                        analysing low-grade ore during the green metal
+                        transition for Australia.
+                        This project focuses on understanding and advancing the
+                        kinetics of direct reduction ironmaking (using hydrogen)
+                        from a materials science perspective. It examines
+                        impurity management, microstructure evolution, and
+                        high-temperature phase transformations that underpin
+                        sustainable metallurgical processes.
+                        The candidate will be jointly supervised by Professor
+                        Michael Preuss (<a
+                          href="mailto:michael.preuss@monash.edu"
+                          >michael.preuss@monash.edu</a
+                        >) and myself (<a href="mailto:yuxiang.wu@monash.edu"
+                          >yuxiang.wu@monash.edu</a
+                        >), within the Department of Materials Science and
+                        Engineering at Monash University.
+                        We are looking for candidates with strong interests in
+                        metallurgy, thermodynamics, and the kinetics of
+                        solid-state transformations. The candidate will have
+                        access to a unique new suite of analytical equipment in
+                        engineering, including a dedicated
+                        <em>in situ</em> X-ray diffractometer at Monash and
+                        synchrotron X-ray facilities at the Australian
+                        Synchrotron.
+                      </p>
+                      <p>
+                        Please email us directly for further project details. A
+                        scholarship opportunity is available for this project.
+                      </p>
+                      <p>
+                        Full description:
+                        <a
+                          href="https://careers.pageuppeople.com/513/cw/en/job/685999/doctor-of-philosophy-phd-on-australian-green-ironmaking"
+                          target="_blank"
+                        >
+                          https://careers.pageuppeople.com/513/cw/en/job/685999/doctor-of-philosophy-phd-on-australian-green-ironmaking
+                        </a>
+                      </p>
                       <ul>
                         <li>Start: January 2026</li>
-                        <li>Preferred background:
+                        <li>
+                          Preferred background:
                           <ul>
-                            <li>Experimental techniques: <em>X-ray/neutron scattering, electron microscopy</em></li>
-                            <li>Fundamentals in <em>phase transformations (metals/oxidation/corrosion, etc.)</em></li>
+                            <li>
+                              Experimental techniques:
+                              <em
+                                >X-ray/neutron scattering, electron
+                                microscopy</em
+                              >
+                            </li>
+                            <li>
+                              Fundamentals in
+                              <em
+                                >phase transformations
+                                (metals/oxidation/corrosion, etc.)</em
+                              >
+                            </li>
                           </ul>
                         </li>
                       </ul>
                     </div>
                   </details>
 
+                  <!-- PhD 2 (formerly PhD 3) -->
                   <details open>
-                    <summary><strong>PhD 2 - Phase transformation/defect formation in thermodynamic open system </strong></summary>
+                    <summary>
+                      <strong>
+                        <a
+                          href="https://careers.pageuppeople.com/513/cw/en/job/685997/doctor-of-philosophy-phd-on-phase-transformations-in-advanced-steel-design"
+                          target="_blank"
+                        >
+                          PhD 2 - Phase transformations in advanced steel design
+                        </a>
+                      </strong>
+                    </summary>
                     <div class="panel">
+                      <p>
+                        We are seeking a PhD candidate with an interest in phase
+                        transformations in metallic materials. This project aims
+                        to develop a thermodynamic and kinetic framework to
+                        understand pattern selection during steel phase
+                        transformations, with a particular focus on how chemical
+                        composition influences local transformation behaviour.
+                        The candidate will be jointly supervised by Professor
+                        Chris Hutchinson (<a
+                          href="mailto:christopher.hutchinson@monash.edu"
+                          >christopher.hutchinson@monash.edu</a
+                        >) and myself (<a href="mailto:yuxiang.wu@monash.edu"
+                          >yuxiang.wu@monash.edu</a
+                        >), in collaboration with Baosteel’s Central Research
+                        Institute in Shanghai.
+                        We are especially interested in candidates with a strong
+                        background in metallurgy, particularly in the
+                        thermodynamics and kinetics of solid-state phase
+                        transformations. Candidates who are keen to combine
+                        experimental, computational, and data-driven approaches
+                        to study high-temperature phase transformations in situ are strongly encouraged to apply.
+                      </p>
+                      <p>
+                        Please email us directly for further project details. A
+                        scholarship opportunity is available for this project.
+                        Full description:
+                        <a
+                          href="https://careers.pageuppeople.com/513/cw/en/job/685997/doctor-of-philosophy-phd-on-phase-transformations-in-advanced-steel-design"
+                          target="_blank"
+                        >
+                          https://careers.pageuppeople.com/513/cw/en/job/685997/doctor-of-philosophy-phd-on-phase-transformations-in-advanced-steel-design
+                        </a>
+                      </p>
                       <ul>
                         <li>Start: January 2026</li>
-                        <li>Preferred background:
-                          <ul>
-                            <!-- <li>Focus: Phase transformations in green ironmaking</li> -->
-                            <li>Experimental techniques: <em>X-ray/neutron diffraction, electron microscopy</em></li>
-                            <li>Fundamentals in <em>phase transformations (metals, oxidation, etc.)</em></li>
-                          </ul>
+                        <li>
+                          Collaboration: Major Chinese steelmaker / Northeastern
+                          University, China
                         </li>
-                      </ul>
-                    </div>
-                  </details>
-
-                  <details open>
-                    <summary><strong>PhD 3 - New phase transformation theory in advanced low-alloy steels</strong></summary>
-                    <div class="panel">
-                      <ul>
-                        <li>Start: January 2026</li>
-                        <li>Collaboration: Major Chinese steelmaker / Northeastern University, China</li>
-                        <li>Preferred background:
+                        <li>
+                          Preferred background:
                           <ul>
-                            <li>Experimental techniques: <em>electron microscopy</em></li>
-                            <li>Fundamentals in <em>phase transformations (steels)</em></li>
+                            <li>
+                              Experimental techniques:
+                              <em>electron microscopy</em>
+                            </li>
+                            <li>
+                              Fundamentals in
+                              <em>phase transformations (steels)</em>
+                            </li>
                           </ul>
                         </li>
                       </ul>
@@ -440,14 +830,26 @@
                   <span class="tag">EOIs welcome</span>
                 </summary>
                 <div class="panel">
-                  <p><strong>PhDs — Expressions of Interest</strong> are welcome in any of our three areas:</p>
+                  <p>
+                    <strong>PhDs — Expressions of Interest</strong> are welcome
+                    in any of our three areas:
+                  </p>
                   <ul>
                     <li><em>Machine Intelligence</em></li>
                     <li><em>Green Metal</em></li>
                     <li><em>Ocean Carbonation</em></li>
                   </ul>
-                  <p><strong>Undergraduate Students:</strong> I regularly host <em>Final Year Projects</em> and <em>Summer Research Students</em> in the same areas.</p>
-                  <p class="contact">📧 Please send EOIs to <a href="mailto:yuxiang.wu@monash.edu">yuxiang.wu@monash.edu</a></p>
+                  <p>
+                    <strong>Undergraduate Students:</strong> I regularly host
+                    <em>Final Year Projects</em> and
+                    <em>Summer Research Students</em> in the same areas.
+                  </p>
+                  <p class="contact">
+                    📧 Please send EOIs to
+                    <a href="mailto:yuxiang.wu@monash.edu"
+                      >yuxiang.wu@monash.edu</a
+                    >
+                  </p>
                 </div>
               </details>
             </div>
@@ -459,12 +861,37 @@
       <section class="section" id="contact" aria-label="Contact">
         <h2>Contact</h2>
         <p>
-          <span class="k"><a href="mailto:yuxiang.wu@monash.edu">yuxiang.wu@monash.edu</a></span><br />
-          <span class="sub">Department of Materials science and engineering, Monash University</span><br />
-          <span class="sub">20 Research Way, Clayton, VIC, Australia</span><br />
-          <a href="https://www.monash.edu/engineering/yuxiangwu" target="_blank" rel="noopener">Monash Profile</a> ·
-          <a href="https://www.linkedin.com/in/yuxiang-wu-a7702776/?originalSubdomain=au" target="_blank" rel="noopener">LinkedIn</a> ·
-          <a href="https://scholar.google.com/citations?user=1JBjOO8AAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
+          <span class="k"
+            ><a href="mailto:yuxiang.wu@monash.edu"
+              >yuxiang.wu@monash.edu</a
+            ></span
+          ><br />
+          <span class="sub"
+            >Department of Materials science and engineering, Monash
+            University</span
+          ><br />
+          <span class="sub">20 Research Way, Clayton, VIC, Australia</span
+          ><br />
+          <a
+            href="https://www.monash.edu/engineering/yuxiangwu"
+            target="_blank"
+            rel="noopener"
+            >Monash Profile</a
+          >
+          ·
+          <a
+            href="https://www.linkedin.com/in/yuxiang-wu-a7702776/?originalSubdomain=au"
+            target="_blank"
+            rel="noopener"
+            >LinkedIn</a
+          >
+          ·
+          <a
+            href="https://scholar.google.com/citations?user=1JBjOO8AAAAJ&hl=en"
+            target="_blank"
+            rel="noopener"
+            >Google Scholar</a
+          >
         </p>
       </section>
     </main>
@@ -475,7 +902,7 @@
 
     <!-- YEAR (auto-updates to current year) -->
     <script>
-      document.getElementById('y').textContent = new Date().getFullYear();
+      document.getElementById("y").textContent = new Date().getFullYear();
     </script>
   </body>
 </html>
