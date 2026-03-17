@@ -17,7 +17,7 @@
         --radius: 14px;
         --pad: 18px;
 
-        --bg: #0b0e13;
+        --bg: #000000;
         --panel: #0f131a;
         --ink: #e8eef7;
         --sub: #a6b0c3;
@@ -34,7 +34,7 @@
           monospace;
       }
       [data-theme="dark"] {
-        --bg: #0b0e13;
+        --bg: #000000;
         --panel: #0f131a;
         --ink: #e8eef7;
         --sub: #a6b0c3;
@@ -68,17 +68,7 @@
       body {
         margin: 0;
         font: var(--font);
-        background: radial-gradient(
-            1200px 700px at 10% -10%,
-            rgba(88, 225, 255, 0.08),
-            transparent 60%
-          ),
-          radial-gradient(
-            900px 600px at 90% 0%,
-            rgba(139, 92, 246, 0.1),
-            transparent 60%
-          ),
-          var(--bg);
+        background: var(--bg);
         color: var(--ink);
       }
       a {
@@ -283,14 +273,16 @@
         border-radius: var(--radius);
         background: linear-gradient(
           180deg,
-          color-mix(in oklab, var(--panel) 98%, transparent),
-          var(--panel)
+          color-mix(in srgb, var(--panel) 74%, transparent),
+          color-mix(in srgb, var(--panel) 56%, transparent)
         );
         border: 1px solid var(--line);
         min-height: 160px;
         display: grid;
         align-content: space-between;
         gap: 10px;
+        backdrop-filter: blur(14px) saturate(1.05);
+        -webkit-backdrop-filter: blur(14px) saturate(1.05);
         transition: transform 0.15s ease;
       }
       .card:hover {
@@ -352,9 +344,11 @@
       .openings details {
         border: 1px solid var(--line);
         border-radius: 12px;
-        background: color-mix(in oklab, var(--panel) 96%, transparent);
+        background: color-mix(in srgb, var(--panel) 62%, transparent);
         margin: 10px 0;
         box-shadow: var(--shadow);
+        backdrop-filter: blur(12px) saturate(1.04);
+        -webkit-backdrop-filter: blur(12px) saturate(1.04);
       }
       .openings summary {
         cursor: pointer;
@@ -406,7 +400,6 @@
       ========================================================================== */
       section.section {
         padding: 8px 0 16px;
-        border-top: 1px solid var(--line);
       }
       h2 {
         font-size: 24px;
@@ -960,13 +953,5 @@
       </section>
     </main>
 
-    <footer>
-      <div class="wrap foot">© <span id="y"></span> Yuxiang Wu</div>
-    </footer>
-
-    <!-- YEAR (auto-updates to current year) -->
-    <script>
-      document.getElementById("y").textContent = new Date().getFullYear();
-    </script>
   </body>
 </html>
