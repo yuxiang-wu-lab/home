@@ -269,11 +269,11 @@
       /* ==========================================================================
          7) BANNERS / GRID CARDS
          --------------------------------------------------------------------------
-         Reusable card styles and the 3-column research grid.
+         Reusable card styles and the 2-column research grid.
       ========================================================================== */
       .grid {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         gap: var(--gap);
         padding: 26px 0;
       }
@@ -384,6 +384,11 @@
         padding: 12px 16px 16px;
         color: var(--sub);
       }
+      .openings details.is-struck summary,
+      .openings details.is-struck .panel,
+      .openings details.is-struck .panel * {
+        text-decoration: line-through;
+      }
       .openings ul {
         margin: 8px 0 0;
       }
@@ -489,13 +494,14 @@
           <p class="sub">
             I am a lecturer (teaching and research) in the Department of
             Materials Science and Engineering at Monash University, Australia.
-            My interest lies in the intersection of materials science, data
-            science, and environmental science. I work with a small, agile group
-            focused on understanding and intelligently utilising metal resources
-            during the energy transition, while examining the environmental
-            consequences of carbon emissions across Earth and ocean systems. Our
-            work spans industry-driven projects that address immediate needs and
-            fundamental research that may create a lasting impact.
+            My research sits at the intersection of materials science, data
+            science, and environmental science. I lead a small, agile group
+            focused on understanding, characterising, and intelligently
+            utilising metal resources for the energy transition. Our work spans
+            data-driven materials characterisation, green metal processing,
+            by-product valorisation, and the environmental consequences of
+            carbon emissions, combining industry-driven projects with
+            fundamental research aimed at lasting impact.
           </p>
           <a class="cta" href="#openings" aria-label="See open positions">
             <svg
@@ -514,7 +520,7 @@
         </div>
       </section>
 
-      <!-- RESEARCH GRID (3 cards) -->
+      <!-- RESEARCH GRID (2 cards) -->
       <section class="grid" id="research" aria-label="Research areas">
         <!-- Active external link -->
         <a
@@ -541,25 +547,11 @@
           <div class="tint"></div>
           <strong>Green Metal</strong>
           <div class="sub">
-            Green iron; steel recycling; green aluminium; advanced alloys.
+            Green iron; steel recycling; metal production by-product; green aluminium; advanced alloys.
           </div>
           <div class="mono sub">/green-metal →</div>
         </div>
 
-        <!-- Placeholder (non-clickable) -->
-        <div
-          class="card is-disabled"
-          role="group"
-          aria-label="Ocean Carbonation (coming soon)"
-        >
-          <div class="tint"></div>
-          <strong>Ocean Carbonation</strong>
-          <div class="sub">
-            Mineral–carbon interactions, kinetics of (de)carbonation, and
-            monitoring for stable ocean carbon storage.
-          </div>
-          <div class="mono sub">/ocean-carbonation →</div>
-        </div>
       </section>
 
       <!-- TEACHING BANNER -->
@@ -624,10 +616,10 @@
               <details open>
                 <summary>
                   Postdoctoral Position
-                  <span class="tag">Hiring: Jan 2026</span>
+                  <span class="tag">Closed</span>
                 </summary>
                 <div class="panel">
-                  <details open>
+                  <details open class="is-struck">
                     <summary>
                       <strong>
                         <a
@@ -917,7 +909,6 @@
                       <ul>
                         <li><em>Machine Intelligence</em></li>
                         <li><em>Green Metal</em></li>
-                        <li><em>Ocean Carbonation</em></li>
                       </ul>
                       <p>
                         <strong>Undergraduate Students:</strong> I regularly host
@@ -949,7 +940,7 @@
             ></span
           ><br />
           <span class="sub"
-            >Department of Materials science and engineering, Monash
+            >Department of Materials Science and Engineering, Monash
             University</span
           ><br />
           <span class="sub">20 Research Way, Clayton, VIC, Australia</span

@@ -1,0 +1,25 @@
+{
+  "name": "home-static-site",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "forwardPorts": [8000],
+  "portsAttributes": {
+    "8000": {
+      "label": "Static site preview",
+      "onAutoForward": "openPreview"
+    }
+  },
+  "postAttachCommand": "python3 -m http.server 8000",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "files.exclude": {
+          "**/.DS_Store": true
+        }
+      },
+      "extensions": [
+        "ecmel.vscode-html-css",
+        "esbenp.prettier-vscode"
+      ]
+    }
+  }
+}
