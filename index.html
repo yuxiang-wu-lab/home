@@ -358,11 +358,16 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        gap: 10px;
+        flex-wrap: wrap;
         font-weight: 600;
         color: var(--ink);
       }
       .openings summary::-webkit-details-marker {
         display: none;
+      }
+      .openings summary strong {
+        min-width: 0;
       }
       .openings summary .tag {
         font-family: var(--mono);
@@ -373,6 +378,7 @@
         padding: 2px 8px;
         border-radius: 999px;
         margin-left: 10px;
+        flex: 0 0 auto;
       }
       .openings .panel {
         padding: 12px 16px 16px;
@@ -596,24 +602,88 @@
           <strong>Openings</strong>
           <div class="sub">
             <div class="openings">
-              <!-- Postdocs -->
+              <!-- PhD 4 -->
               <details open>
                 <summary>
-                  Postdoctoral Position
+                  <strong>
+                    PhD - Processing intelligence for green metals using in situ X-ray
+                    characterisation and machine learning
+                  </strong>
+                  <span class="tag">Hiring July 2026</span>
+                </summary>
+                    <div class="panel">
+                      <p>
+                        We are seeking a PhD candidate to develop advanced in situ X-ray
+                        characterisation and machine-learning-enabled processing intelligence for
+                        green metals transformation. The project will focus on capturing time-resolved
+                        structural and chemical changes during minerals-to-metals processing,
+                        including aqueous, electrochemical, thermal, and hybrid pathways relevant to
+                        extraction, refining, recycling, phase transformation, impurity evolution, and
+                        microstructure development.
+                      </p>
+                      <p>
+                        The candidate will use advanced in situ X-ray methods, including diffraction,
+                        scattering, spectroscopy, imaging, and complementary multimodal
+                        characterisation, to generate data-rich descriptions of evolving materials and
+                        processing pathways. A central aim is to couple these experiments with machine
+                        learning, mechanistic modelling, and automated data analysis to extract
+                        processing-structure-property relationships and support predictive process
+                        optimisation.
+                      </p>
+                      <p>
+                        The project sits within Monash's broader ambition to build physical-digital
+                        capability for infrastructure platforms in minerals-to-green metals
+                        transformation. It will suit a candidate interested in combining experimental
+                        materials science, advanced characterisation, and data-driven modelling to
+                        develop new forms of processing intelligence for low-emission metals
+                        production and recycling.
+                      </p>
+                      <p>
+                        The candidate will be supervised by Dr Yuxiang Wu
+                        (<a href="mailto:yuxiang.wu@monash.edu">yuxiang.wu@monash.edu</a>), with
+                        collaborators across materials engineering, X-ray science, and artificial
+                        intelligence.
+                      </p>
+                      <p>
+                        Please email us directly for further project details. A scholarship opportunity
+                        may be available for this project.
+                      </p>
+                      <ul>
+                        <li>Start: July 2026</li>
+                        <li>
+                          Preferred background:
+                          <ul>
+                            <li>
+                              Materials Science, Metallurgical Engineering, Mechanical Engineering,
+                              Physics, Chemical Engineering, Data Science, or related disciplines.
+                            </li>
+                            <li>
+                              Strong interest in phase transformations, process chemistry, materials
+                              processing, and advanced X-ray characterisation.
+                            </li>
+                            <li>
+                              Experience or enthusiasm for machine learning, scientific computing,
+                              automated data analysis, or computational modelling.
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </div>
+              </details>
+
+              <!-- Postdoc 1 -->
+              <details open class="is-struck">
+                <summary>
+                  <strong>
+                    <a
+                      href="https://careers.pageuppeople.com/513/cw/en/job/686321/research-fellow-australian-green-ironmaking"
+                      target="_blank"
+                    >
+                      Postdoc - Australian green ironmaking
+                    </a>
+                  </strong>
                   <span class="tag">Closed</span>
                 </summary>
-                <div class="panel">
-                  <details open class="is-struck">
-                    <summary>
-                      <strong>
-                        <a
-                          href="https://careers.pageuppeople.com/513/cw/en/job/686321/research-fellow-australian-green-ironmaking"
-                          target="_blank"
-                        >
-                          Postdoc 1 - Australian green ironmaking
-                        </a>
-                      </strong>
-                    </summary>
                     <div class="panel">
                       <p>
                         We are seeking a Research Fellow to help develop Australian green ironmaking by
@@ -654,30 +724,22 @@
                         </li>
                       </ul>
                     </div>
-                  </details>
-                </div>
               </details>
 
-              <!-- PhDs -->
-              <details open>
+              <!-- PhD 1 -->
+              <details open class="is-struck">
                 <summary>
-                  PhD Positions
-                  <span class="tag">Hiring: Jan 2026</span>
+                  <strong>
+                    <a
+                      href="https://careers.pageuppeople.com/513/cw/en/job/685999/doctor-of-philosophy-phd-on-australian-green-ironmaking"
+                      target="_blank"
+                    >
+                      PhD - Direct reduction of low-grade iron ore in
+                      green ironmaking
+                    </a>
+                  </strong>
+                  <span class="tag">Closed</span>
                 </summary>
-                <div class="panel">
-                  <!-- PhD 1 -->
-                  <details open>
-                    <summary>
-                      <strong>
-                        <a
-                          href="https://careers.pageuppeople.com/513/cw/en/job/685999/doctor-of-philosophy-phd-on-australian-green-ironmaking"
-                          target="_blank"
-                        >
-                          PhD 1 - Direct reduction of low-grade iron ore in
-                          green ironmaking
-                        </a>
-                      </strong>
-                    </summary>
                     <div class="panel">
                       <p>
                         We are seeking a PhD candidate interested in
@@ -741,20 +803,21 @@
                         </li>
                       </ul>
                     </div>
-                  </details>
+              </details>
 
-                  <!-- PhD 2 -->
-                  <details open>
-                    <summary>
-                      <strong>
-                        <a
-                          href="https://careers.pageuppeople.com/513/cw/en/job/685997/doctor-of-philosophy-phd-on-phase-transformations-in-advanced-steel-design"
-                          target="_blank"
-                        >
-                          PhD 2 - Phase transformations in advanced steel design
-                        </a>
-                      </strong>
-                    </summary>
+              <!-- PhD 2 -->
+              <details open class="is-struck">
+                <summary>
+                  <strong>
+                    <a
+                      href="https://careers.pageuppeople.com/513/cw/en/job/685997/doctor-of-philosophy-phd-on-phase-transformations-in-advanced-steel-design"
+                      target="_blank"
+                    >
+                      PhD - Phase transformations in advanced steel design
+                    </a>
+                  </strong>
+                  <span class="tag">Closed</span>
+                </summary>
                     <div class="panel">
                       <p>
                         We are seeking a PhD candidate with an interest in phase
@@ -811,20 +874,21 @@
                         </li>
                       </ul>
                     </div>
-                  </details>
+              </details>
 
-                  <!-- PhD 3 -->
-                  <details open>
-                    <summary>
-                      <strong>
-                        <a
-                          href="https://www.findaphd.com/phds/project/doctor-of-philosophy-phd-on-design-of-microalloyed-green-steels/?p190633"
-                          target="_blank"
-                        >
-                          PhD 3 - Recycling-oriented design of microalloyed green steels
-                        </a>
-                      </strong>
-                    </summary>
+              <!-- PhD 3 -->
+              <details open class="is-struck">
+                <summary>
+                  <strong>
+                    <a
+                      href="https://www.findaphd.com/phds/project/doctor-of-philosophy-phd-on-design-of-microalloyed-green-steels/?p190633"
+                      target="_blank"
+                    >
+                      PhD - Recycling-oriented design of microalloyed green steels
+                    </a>
+                  </strong>
+                  <span class="tag">Closed</span>
+                </summary>
                     <div class="panel">
                       <p>
                         We are seeking a PhD candidate to join an Australian Research Council (ARC)
@@ -838,14 +902,13 @@
                         >) and myself
                         (<a href="mailto:yuxiang.wu@monash.edu">yuxiang.wu@monash.edu</a>), within
                         the Department of Materials Science and Engineering, in collaboration with a
-                        French industrial partner.
-                        The project combines alloy design, high-temperature experimentation, and
-                        advanced characterisation with thermodynamic/kinetic and computational
-                        modelling.
-                        </p>
-                        <p>
-                        Please email us directly for further project details. A
-                        scholarship opportunity is available for this project. Full description:
+                        French industrial partner. The project combines alloy design, high-temperature
+                        experimentation, and advanced characterisation with thermodynamic/kinetic and
+                        computational modelling.
+                      </p>
+                      <p>
+                        Please email us directly for further project details. A scholarship opportunity
+                        is available for this project. Full description:
                         <a
                           href="https://www.findaphd.com/phds/project/doctor-of-philosophy-phd-on-design-of-microalloyed-green-steels/?p190633"
                           target="_blank"
@@ -866,25 +929,25 @@
                               Physics, or related disciplines.
                             </li>
                             <li>
-                              Strong interest in the thermodynamics and kinetics of solid-state
-                              phase transformations.
+                              Strong interest in the thermodynamics and kinetics of solid-state phase
+                              transformations.
                             </li>
                             <li>
-                              Experience or enthusiasm for advanced microscopy and/or
-                              computational modelling.
+                              Experience or enthusiasm for advanced microscopy and/or computational
+                              modelling.
                             </li>
                           </ul>
                         </li>
                       </ul>
                     </div>
-                  </details>
+              </details>
 
-                  <!-- General -->
-                  <details open>
-                    <summary>
-                      General Openings
-                      <span class="tag">EOIs welcome</span>
-                    </summary>
+              <!-- General -->
+              <details open>
+                <summary>
+                  General Openings
+                  <span class="tag">EOIs welcome</span>
+                </summary>
                     <div class="panel">
                       <p>
                         <strong>PhDs — Expressions of Interest</strong> are welcome
@@ -906,8 +969,6 @@
                         >
                       </p>
                     </div>
-                  </details>
-                </div>
               </details>
             </div>
           </div>
